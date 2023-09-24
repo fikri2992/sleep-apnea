@@ -186,7 +186,7 @@ def main():
 
     print("Data Ready")
 
-    verbose, epochs, batch_size = 1, 50, 32
+    verbose, epochs, batch_size = 1, 20, 32
 
     model = define_model()
 
