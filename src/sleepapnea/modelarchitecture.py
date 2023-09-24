@@ -69,8 +69,7 @@ def define_model():
     model.add(Dense(2, activation='softmax'))
 
     # configure model for training
-    model.compile(loss='categorical_crossentropy',
-                  optimizer='adam', metrics=['accuracy'])
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     return model
 
@@ -93,8 +92,7 @@ def evaluate_model(accuracy, y_test, y_pred):
     # generate classification report
     target_names = ['non-apnea', 'apnea']
     print('Classification Report:')
-    print(classification_report(y_test.argmax(axis=1),
-          y_pred.argmax(axis=1), target_names=target_names))
+    print(classification_report(y_test.argmax(axis=1), y_pred.argmax(axis=1), target_names=target_names))
 
 
 def visualise_training(history):
@@ -186,7 +184,7 @@ def main():
 
     print("Data Ready")
 
-    verbose, epochs, batch_size = 1, 20, 32
+    verbose, epochs, batch_size = 1, 2, 32
 
     model = define_model()
 
@@ -207,7 +205,7 @@ def main():
 
     evaluate_model(accuracy, y_test, y_pred)
 
-    # visualise_training(history)
+    visualise_training(history)
 
     save_model(model)
 
