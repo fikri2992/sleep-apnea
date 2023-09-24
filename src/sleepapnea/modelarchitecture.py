@@ -207,7 +207,7 @@ def main():
 
     evaluate_model(accuracy, y_test, y_pred)
 
-    visualise_training(history)
+    # visualise_training(history)
 
     save_model(model)
 
